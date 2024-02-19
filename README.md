@@ -15,7 +15,7 @@ Robot Code errors are not available. May be next version.
 Your Robot need to be connected to the same network than Domoticz. If you don't know how to put the robot in the same network, follow this steps:
 - Put the robot into "CONN" mode
 - In your phone or PC, you must connect with "Proscenic_XXXX" SSID access point. 
-- To know the IP of Robot you can use an App such as Fing or ScanIP. The IP can be similar to 192.168.0.34
+- To know the IP of Robot you can use an App such as Fing or ScanIP. The IP can be similar to 192.168.4.1
 - Now connect with your Web browser to this IP.
 - You would see a web page where you can introduce your 2,4GHz SSID home wifi and your password.
 - After that the Robot would must be connected to your home network.
