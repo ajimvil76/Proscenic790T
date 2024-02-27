@@ -318,6 +318,9 @@ class BasePlugin:
             Domoticz.Log(body) 
             message = ET.fromstring(self.__BufferRX)
             body = ''.join(chr(b) for b in b64decode(message.find('BODY').text) if 32 <= b < 128)
+            
+            # Replace TYPE content to avoid errors
+            body = re.sub('<TYPE>?(.*?)</TYPE>', '<TYPE>xff</TYPE>', body,  flags=re.DOTALL)
             Domoticz.Log(body) 
             
             # after query status recived, parse body parameter
