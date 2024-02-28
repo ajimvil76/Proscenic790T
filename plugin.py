@@ -253,26 +253,31 @@ class BasePlugin:
                 self.__mode = Level
                 UpdateDevice(self.modeUnit, self.__mode)
             
-            
         elif self.moveUnit == Unit:
             if Level == 10:
                 Domoticz.Log("FOR")
+                bStop = False
             elif Level == 20:
                 Domoticz.Log("BACK")
+                bStop = False
             elif Level == 30:
                 Domoticz.Log("LEFT")
+                bStop = True
             elif Level == 40:
                 Domoticz.Log("RIGHT")
+                bStop = True
             else:
                 Domoticz.Log("STOP")
+                bStop = False
             
             # Send Command
             self.apiRequest(Level, self.move)
             UpdateDevice(self.moveUnit, Level)
-            sleep(0.25)
-            Level=0
-            self.apiRequest(Level, self.move)
-            UpdateDevice(self.moveUnit, Level)
+            if (bStop):
+                sleep(0.25)
+                Level=0
+                self.apiRequest(Level, self.move)
+                UpdateDevice(self.moveUnit, Level)
             
     def generateMessageBody(self, command, action):
         transitInfo = ET.Element('TRANSIT_INFO')
