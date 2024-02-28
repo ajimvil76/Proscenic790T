@@ -139,9 +139,9 @@ class BasePlugin:
     }
     
     moveOptions = {
-        "LevelActions": "|||",
+        "LevelActions": "||||",
         "LevelNames": "Off|For|Back|Left|Right",
-        "LevelOffHidden": "true",
+        "LevelOffHidden": "false",
         "SelectorStyle": "0"
     }
 
